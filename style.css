@@ -10,10 +10,10 @@ main {
       grid-template-columns: auto max-content;
   -webkit-column-gap: 3em;
           column-gap: 3em;
-  margin: 1em auto;
+  margin: 3em auto;
   width: 100%;
   max-width: 34em;
-  row-gap: 1em;
+  row-gap: 2em;
   overflow: hidden;
 }
 
@@ -56,6 +56,7 @@ main {
     -ms-grid-columns: max-content;
         grid-template-columns: -webkit-max-content;
         grid-template-columns: max-content;
+    margin: 1em auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

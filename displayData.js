@@ -5,12 +5,16 @@ export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth, 
 const mousePosElem = document.getElementById("mousePos")
 
 export function showInitialData(){
+    displayCookiesAreDisabled()
     displayFontSize()
     displayHeight()
     displayJavascriptIsDisabled()
     displayWidth()
 }
 
+function displayCookiesAreDisabled(){
+    document.getElementById("cookiesEnabled").innerText = navigator.cookieEnabled ? "are" : "are not"
+}
 function displayFontSize(){
     document.getElementById("fontSize").innerText = getFontSize()
 }
@@ -18,7 +22,7 @@ export function displayHeight(){
     document.getElementById("pageHeight").innerText = DimenUnitHandler.pxToCurrentUnit(getHeight())
 }
 function displayJavascriptIsDisabled(){
-    document.getElementById("jsDisabled").innerText = "is not"
+    document.getElementById("jsEnabled").innerText = "is"
 }
 export function displayMousePos(event){
     if(event === undefined){
