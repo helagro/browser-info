@@ -1,15 +1,12 @@
+import {DimenUnitHandler} from "./units.js"
+import {showInitialData} from "./displayData.js"
+import {addListeners} from "./listeners.js"
 
 function main(){
-    addListeners()
     DimenUnitHandler.displayCurrentUnit()
     showInitialData()
+	addListeners()
 }
-
-function addListeners(){
-    window.addEventListener('resize', displayHeight);
-    window.addEventListener('resize', displayWidth);
-}
-
 
 
 

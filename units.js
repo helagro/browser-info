@@ -1,11 +1,15 @@
-class DimenUnitHandler{
+import { displayFunctionsThatUsesDimenUnits } from "./displayData.js"
+
+export class DimenUnitHandler{
     static avalibleUnits = ["px", "rem"]
     static currentUnit = "px"
-	static #callbacksOnNewUnit = []
 
     static changeUnit(newUnit){
         DimenUnitHandler.currentUnit = newUnit
         DimenUnitHandler.displayCurrentUnit()
+		for(let displayFunction of displayFunctionsThatUsesDimenUnits){
+			displayFunction.call()
+		}
     }
 
     static displayCurrentUnit(){

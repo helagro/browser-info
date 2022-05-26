@@ -1,11 +1,15 @@
-function showInitialData(){
+import {DimenUnitHandler} from "./units.js"
+
+export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth]
+
+export function showInitialData(){
     displayWidth()
     displayHeight()
 }
 
-function displayHeight(){
+export function displayHeight(){
     document.getElementById("pageHeight").innerText = DimenUnitHandler.pxToCurrentUnit(getHeight())
 }
-function displayWidth(){
+export function displayWidth(){
     document.getElementById("pageWidth").innerText = DimenUnitHandler.pxToCurrentUnit(getWidth())
 }
