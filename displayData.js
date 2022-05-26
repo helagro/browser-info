@@ -5,24 +5,32 @@ export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth, 
 const mousePosElem = document.getElementById("mousePos")
 
 export function showInitialData(){
-    displayWidth()
+    displayFontSize()
     displayHeight()
+    displayJavascriptIsDisabled()
+    displayWidth()
 }
 
+function displayFontSize(){
+    document.getElementById("fontSize").innerText = getFontSize()
+}
 export function displayHeight(){
     document.getElementById("pageHeight").innerText = DimenUnitHandler.pxToCurrentUnit(getHeight())
 }
-export function displayWidth(){
-    document.getElementById("pageWidth").innerText = DimenUnitHandler.pxToCurrentUnit(getWidth())
+function displayJavascriptIsDisabled(){
+    document.getElementById("jsDisabled").innerText = "is not"
 }
-
 export function displayMousePos(event){
     if(event === undefined){
-        mousePosElem.innerText = "X: Y:"
+        mousePosElem.innerText = "x: y:"
         return
     }
 
     const x = DimenUnitHandler.pxToCurrentUnit(event.pageX)
     const y = DimenUnitHandler.pxToCurrentUnit(event.pageY)
-    mousePosElem.innerText = `X:${x} Y:${y}`
+    mousePosElem.innerText = `x:${x} y:${y}`
 }
+export function displayWidth(){
+    document.getElementById("pageWidth").innerText = DimenUnitHandler.pxToCurrentUnit(getWidth())
+}
+

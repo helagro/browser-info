@@ -6,23 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Info</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <div class="factsContainer">
             <div class="factContainer">
-                <p class="factLabel">The page width is: </p>
-                <p class="factData" id="pageWidth"></p>
-                <p class="factUnitDimen"></p>
+                <p class="factLabel">Browser font size:</p>
+                <p class="factData" id="fontSize"></p>
+                <p>px</p>
             </div>
             <div class="factContainer">
-                <p class="factLabel">The page height is: </p>
-                <p class="factData" id="pageHeight"></p>
-                <p class="factUnitDimen"></p>
+                <p class="factLabel">Javascript</p>
+                <p class="factData" id="jsDisabled">is</p>
+                <p class="factLabel">disabled</p>
+            </div>
+            <div class="factsGroup">
+                <p class="factsGroupHeader">PAGE SIZE</p>
+                <div class="factContainer">
+                    <p class="factLabel">Page width: </p>
+                    <p class="factData" id="pageWidth"></p>
+                    <p class="factUnitDimen"></p>
+                </div>
+                <div class="factContainer">
+                    <p class="factLabel">Page height: </p>
+                    <p class="factData" id="pageHeight"></p>
+                    <p class="factUnitDimen"></p>
+                </div>
             </div>
             <div class="factContainer">
-                <p class="factLabel">The mouse position is:</p>
-                <p class="factData" id="mousePos">X: Y:</p>
+                <p class="factLabel">Mouse position:</p>
+                <p class="factData" id="mousePos">x: y:</p>
                 <p>(<p class="factUnitDimen"></p>)</p>
             </div>
         </div>
