@@ -1,0 +1,11 @@
+
+.factContainer{
+}
+
+.factContainer * {
+    display: inline;
+}
+
+.factData{
+    font-weight: 800;
+}
