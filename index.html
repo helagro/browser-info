@@ -21,13 +21,15 @@
         </div>
         <div class="options">
             <p class="optionDescription">Dimension unit</p>
-            <select onselect="">
+            <select id="dimensionUnitSelect" onchange="onSelectedDimensionUnit()">
                 <option value="px">px</option>
-                <option value="em">em</option>
+                <option value="rem">rem</option>
             </select>
         </div>
     </main>
 
+    <script src="units.js"></script>
+    <script src="displayData.js"></script>
     <script src="calc.js"></script>
     <script src="script.js"></script>
     <script src="listeners.js"></script>
