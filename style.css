@@ -1,11 +1,41 @@
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto max-content;
+      grid-template-columns: auto -webkit-max-content;
+      grid-template-columns: auto max-content;
+  -webkit-column-gap: 3em;
+          column-gap: 3em;
+  margin: 1em auto;
+  width: 100%;
+  max-width: 35em;
+  row-gap: 1em;
+  overflow: hidden;
+}
 
-.factContainer{
+.factContainer {
+  overflow: hidden;
 }
 
 .factContainer * {
-    display: inline;
+  display: inline;
+  overflow-wrap: anywhere;
+  overflow: hidden;
 }
 
-.factData{
-    font-weight: 800;
+.factData {
+  font-weight: 800;
 }
+
+.optionContainer * {
+  display: inline;
+}
+
+@media screen and (max-width: 35em) {
+  main {
+    -ms-grid-columns: max-content;
+        grid-template-columns: -webkit-max-content;
+        grid-template-columns: max-content;
+  }
+}
+/*# sourceMappingURL=style.css.map */

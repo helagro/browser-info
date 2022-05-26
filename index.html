@@ -9,22 +9,31 @@
 </head>
 <body>
     <main>
-        <div class="factContainer">
-            <p class="factLabel">The page width is: </p>
-            <p class="factData" id="pageWidth"></p>
-            <p class="factUnitDimen"></p>
-        </div>
-        <div class="factContainer">
-            <p class="factLabel">The page Height is: </p>
-            <p class="factData" id="pageHeight"></p>
-            <p class="factUnitDimen"></p>
+        <div class="factsContainer">
+            <div class="factContainer">
+                <p class="factLabel">The page width is: </p>
+                <p class="factData" id="pageWidth"></p>
+                <p class="factUnitDimen"></p>
+            </div>
+            <div class="factContainer">
+                <p class="factLabel">The page height is: </p>
+                <p class="factData" id="pageHeight"></p>
+                <p class="factUnitDimen"></p>
+            </div>
+            <div class="factContainer">
+                <p class="factLabel">The mouse position is:</p>
+                <p class="factData" id="mousePos">X: Y:</p>
+                <p>(<p class="factUnitDimen"></p>)</p>
+            </div>
         </div>
         <div class="options">
-            <p class="optionDescription">Dimension unit</p>
-            <select id="dimensionUnitSelect" onchange="onSelectedDimensionUnit()">
-                <option value="px">px</option>
-                <option value="rem">rem</option>
-            </select>
+            <div class="optionContainer">
+                <p class="optionDescription">Dimension unit</p>
+                <select id="dimensionUnitSelect" onchange="onSelectedDimensionUnit()">
+                    <option value="px">px</option>
+                    <option value="rem">rem</option>
+                </select>
+            </div>
         </div>
     </main>
 
