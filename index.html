@@ -57,10 +57,15 @@
                 <select id="dimensionUnitSelect" onchange="onSelectedDimensionUnit()">
                     <option value="px">px</option>
                     <option value="rem">rem</option>
+                    <option value="mm">mm</option>
                 </select>
             </div>
         </div>
     </main>
+
+    <div class="computing">
+        <div id="mmMeasurement" style="height:100mm;display:none"></div>
+    </div>
 
     <script src="units.js" type="module"></script>
     <script src="displayData.js" type="module"></script>
