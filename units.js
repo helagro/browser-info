@@ -22,7 +22,7 @@ export class DimenUnitHandler{
 
     static pxToCurrentUnit(px){
         if (DimenUnitHandler.currentUnit == "rem"){
-			return px/getFontSize()
+			return (px/getFontSize()).toFixed(2)
 		} else if(DimenUnitHandler.currentUnit == "px"){
 			return px
 		} else if (DimenUnitHandler.currentUnit == "mm"){
@@ -33,7 +33,7 @@ export class DimenUnitHandler{
     static pxToMm(px){
         const heightStr = document.defaultView.getComputedStyle(DimenUnitHandler.#mmMeasurementDiv).height
         const heightInPx = heightStr.substring(0, heightStr.length-2)
-        return Math.floor(px/(heightInPx/100));
+        return (px/(heightInPx/100)).toFixed(2);
     }
 }
 
