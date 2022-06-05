@@ -1,15 +1,35 @@
+.measuringStick {
+  border-bottom: 0.1em black solid;
+  display: grid;
+  grid-template-columns: -webkit-min-content -webkit-min-content -webkit-min-content;
+  grid-template-columns: min-content min-content min-content;
+}
+.measuringStick .measuringNumber {
+  transform: translateX(-0.25em);
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.measuringStick .measuringNumber p {
+  display: inline;
+}
+.measuringStick .measuringLine {
+  border-left: 0.05em black solid;
+  border-right: 0.05em black solid;
+  height: 1em;
+  width: 0;
+}
+
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto max-content;
-      grid-template-columns: auto -webkit-max-content;
-      grid-template-columns: auto max-content;
-  -webkit-column-gap: 3em;
-          column-gap: 3em;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+  -moz-column-gap: 3em;
+       column-gap: 3em;
   margin: 3em auto;
   width: 100%;
   max-width: 34em;
@@ -53,10 +73,8 @@ main {
 
 @media screen and (max-width: 34em) {
   main {
-    -ms-grid-columns: max-content;
-        grid-template-columns: -webkit-max-content;
-        grid-template-columns: max-content;
+    grid-template-columns: -webkit-max-content;
+    grid-template-columns: max-content;
     margin: 1em auto;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
