@@ -1,20 +1,52 @@
-
-.measuringStick
-    border-bottom: 0.1em black solid
+.measuringStickContainer
     display: grid
-    grid-template-columns: min-content min-content min-content
+    grid-template-columns: auto min-content
+    column-gap: 0.7em
 
-    .measuringNumber
-        transform: translateX(-0.25em)
-        padding: 0
-        margin-top: 0
-        margin-bottom: 0
-        
-        p
+    .measuringLineUnitContainer
+        height: 100%
+        position: relative
+
+        .unitAnnotation
+            position: absolute
+            bottom: 0
+            font-size: 0.8em
+
+    .measuringStick
+        border-bottom: 1.6px black solid
+        display: grid
+        grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 0
+        overflow: visible
+        margin-left: 16px
+        width: min-content
+        grid-template-rows: auto 16px
+
+        .measuringNumber
+            transform: translate(-45%, 6px)
+            padding: 0
+            margin-top: 0
+            margin-bottom: 0
             display: inline
+            overflow: visible
+            width: min-content
+            font-size: 10px
+            
+            p
+                display: inline
+                overflow: visible
 
-    .measuringLine
-        border-left: 0.05em black solid
-        border-right: 0.05em black solid
-        height: 1em
-        width: 0
+        .measuringLine
+            border-left: 1px black solid
+            height: 13px
+            width: 100%
+            margin-top: 3px
+            transform: none !important
+
+        :nth-of-type(5n +1)
+            font-size: 16px
+            height: 16px
+            margin-top: 0em
+            transform: translateX(-45%)
+
+
+
