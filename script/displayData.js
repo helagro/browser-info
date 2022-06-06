@@ -1,6 +1,7 @@
 import {DimenUnitHandler} from "./units.js"
+import {Ruler} from "./ruler.js"
 
-export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth, displayMousePos]
+export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth, displayMousePos, displayRuler]
 
 const mousePosElem = document.getElementById("mousePos")
 
@@ -10,6 +11,7 @@ export function showInitialData(){
     displayHeight()
     displayJavascriptIsDisabled()
     displayWidth()
+    displayRuler()
 }
 
 function displayCookiesAreDisabled(){
@@ -36,5 +38,10 @@ export function displayMousePos(event){
 }
 export function displayWidth(){
     document.getElementById("pageWidth").innerText = DimenUnitHandler.pxToCurrentUnit(getWidth())
+}
+export function displayRuler(){
+    //TODO clear previous elements
+    Ruler.clear()
+    Ruler.render()
 }
 

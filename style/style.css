@@ -10,7 +10,7 @@ main {
        column-gap: 3em;
   margin: 3em auto;
   width: 100%;
-  max-width: 34em;
+  max-width: 38em;
   row-gap: 2em;
   overflow: hidden;
 }
@@ -18,7 +18,6 @@ main {
 .factsGroup {
   margin: 0.7em 0;
 }
-
 .factsGroup .factContainer {
   margin-left: 0.3em;
 }
@@ -33,7 +32,6 @@ main {
 .factContainer {
   overflow: hidden;
 }
-
 .factContainer * {
   display: inline;
   overflow-wrap: anywhere;
@@ -56,7 +54,11 @@ main {
   display: inline;
 }
 
-@media screen and (max-width: 34em) {
+.graphicalTools {
+  grid-column: 1/span 2;
+}
+
+@media screen and (max-width: 38em) {
   main {
     grid-template-columns: -webkit-max-content;
     grid-template-columns: max-content;

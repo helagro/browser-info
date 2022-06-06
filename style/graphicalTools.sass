@@ -1,7 +1,9 @@
-.measuringStickContainer
+.rulerContainer
     display: grid
     grid-template-columns: auto min-content
     column-gap: 0.7em
+    margin: 0 auto
+    width: min-content
 
     .measuringLineUnitContainer
         height: 100%
@@ -12,7 +14,7 @@
             bottom: 0
             font-size: 0.8em
 
-    .measuringStick
+    .ruler
         border-bottom: 1.6px black solid
         display: grid
         grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 0
@@ -29,7 +31,7 @@
             display: inline
             overflow: visible
             width: min-content
-            font-size: 10px
+            font-size: 9px
             
             p
                 display: inline
@@ -41,9 +43,10 @@
             width: 100%
             margin-top: 3px
             transform: none !important
+            box-sizing: border-box
 
         :nth-of-type(5n +1)
-            font-size: 16px
+            font-size: 12px
             height: 16px
             margin-top: 0em
             transform: translateX(-45%)

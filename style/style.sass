@@ -1,4 +1,4 @@
-$mainMaxWidth: 34em
+$mainMaxWidth: 38em
 
 *
     font-family: 'Roboto', sans-serif
@@ -17,8 +17,8 @@ main
 .factsGroup
     margin: 0.7em 0
 
-.factsGroup .factContainer
-    margin-left: 0.3em
+    .factContainer
+        margin-left: 0.3em
 
 .factsGroupHeader
     color: #13138b
@@ -28,11 +28,11 @@ main
 
 .factContainer
     overflow: hidden
-
-.factContainer * 
-    display: inline
-    overflow-wrap: anywhere
-    overflow: hidden
+    
+    * 
+        display: inline
+        overflow-wrap: anywhere
+        overflow: hidden
 
 .factData
     font-weight: 800
@@ -47,6 +47,9 @@ main
 
     *
         display: inline
+
+.graphicalTools
+    grid-column: 1 / span 2
 
 
 @media screen and (max-width: $mainMaxWidth) 

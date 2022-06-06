@@ -1,20 +1,24 @@
-.measuringStickContainer {
+.rulerContainer {
   display: grid;
   grid-template-columns: auto -webkit-min-content;
   grid-template-columns: auto min-content;
   -moz-column-gap: 0.7em;
        column-gap: 0.7em;
+  margin: 0 auto;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
-.measuringStickContainer .measuringLineUnitContainer {
+.rulerContainer .measuringLineUnitContainer {
   height: 100%;
   position: relative;
 }
-.measuringStickContainer .measuringLineUnitContainer .unitAnnotation {
+.rulerContainer .measuringLineUnitContainer .unitAnnotation {
   position: absolute;
   bottom: 0;
   font-size: 0.8em;
 }
-.measuringStickContainer .measuringStick {
+.rulerContainer .ruler {
   border-bottom: 1.6px black solid;
   display: grid;
   grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 0;
@@ -25,7 +29,7 @@
   width: min-content;
   grid-template-rows: auto 16px;
 }
-.measuringStickContainer .measuringStick .measuringNumber {
+.rulerContainer .ruler .measuringNumber {
   transform: translate(-45%, 6px);
   padding: 0;
   margin-top: 0;
@@ -35,21 +39,22 @@
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  font-size: 10px;
+  font-size: 9px;
 }
-.measuringStickContainer .measuringStick .measuringNumber p {
+.rulerContainer .ruler .measuringNumber p {
   display: inline;
   overflow: visible;
 }
-.measuringStickContainer .measuringStick .measuringLine {
+.rulerContainer .ruler .measuringLine {
   border-left: 1px black solid;
   height: 13px;
   width: 100%;
   margin-top: 3px;
   transform: none !important;
+  box-sizing: border-box;
 }
-.measuringStickContainer .measuringStick :nth-of-type(5n +1) {
-  font-size: 16px;
+.rulerContainer .ruler :nth-of-type(5n +1) {
+  font-size: 12px;
   height: 16px;
   margin-top: 0em;
   transform: translateX(-45%);
