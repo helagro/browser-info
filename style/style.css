@@ -4,8 +4,8 @@
 
 main {
   display: grid;
-  grid-template-columns: auto -webkit-max-content;
-  grid-template-columns: auto max-content;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
   -moz-column-gap: 3em;
        column-gap: 3em;
   margin: 3em auto;
