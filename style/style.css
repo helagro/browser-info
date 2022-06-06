@@ -10,7 +10,7 @@ main {
        column-gap: 3em;
   margin: 3em auto;
   width: 100%;
-  max-width: 38em;
+  max-width: 42em;
   row-gap: 2em;
   overflow: hidden;
 }
@@ -18,7 +18,8 @@ main {
 .factsGroup {
   margin: 0.7em 0;
 }
-.factsGroup .factContainer {
+
+.factContainer {
   margin-left: 0.3em;
 }
 
@@ -58,10 +59,14 @@ main {
   grid-column: 1/span 2;
 }
 
-@media screen and (max-width: 38em) {
+@media screen and (max-width: 42em) {
   main {
     grid-template-columns: -webkit-max-content;
     grid-template-columns: max-content;
     margin: 1em auto;
+  }
+
+  .graphicalTools {
+    grid-column: 1;
   }
 }/*# sourceMappingURL=style.css.map */

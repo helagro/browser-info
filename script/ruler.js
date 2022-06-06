@@ -9,9 +9,9 @@ export class Ruler{
         mm: 10
     }
     static MEASURMENT_NUMBERS_AMTS = {
-        rem: 26,
-        px: 11,
-        mm: 11
+        rem: getWidth() > 570 ? 31: 16,
+        px: getWidth() > 570 ? 11: 6,
+        mm: getWidth() > 600 ? 16: 6 
     }
     static GRID_TEMPLATE_COLUMNS_STRS = {
         rem: `${`${Ruler.MEASURMENT_NUMBERS_INCS.rem}rem `.repeat(Ruler.MEASURMENT_NUMBERS_AMTS.rem -1)} 0`,

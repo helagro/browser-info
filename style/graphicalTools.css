@@ -16,7 +16,7 @@
 .rulerContainer .measuringLineUnitContainer .unitAnnotation {
   position: absolute;
   bottom: 0;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .rulerContainer .ruler {
   border-bottom: 1.6px black solid;
