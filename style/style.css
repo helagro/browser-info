@@ -61,12 +61,14 @@ main {
 
 @media screen and (max-width: 42em) {
   main {
-    grid-template-columns: -webkit-max-content;
-    grid-template-columns: max-content;
+    grid-template-columns: auto;
     margin: 1em auto;
   }
 
   .graphicalTools {
     grid-column: 1;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }/*# sourceMappingURL=style.css.map */

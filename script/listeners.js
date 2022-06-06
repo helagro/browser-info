@@ -1,9 +1,10 @@
 import {DimenUnitHandler} from "./units.js"
-import {displayHeight, displayWidth, displayMousePos} from "./displayData.js"
+import {displayHeight, displayWidth, displayMousePos, displayRuler} from "./displayData.js"
 
 export function addListeners(){
     window.addEventListener('resize', displayHeight)
     window.addEventListener('resize', displayWidth)
+    window.addEventListener('resize', displayRuler)
     window.addEventListener("mousemove", displayMousePos, false)
 }
 

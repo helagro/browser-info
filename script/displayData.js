@@ -4,6 +4,7 @@ import {Ruler} from "./ruler.js"
 export const displayFunctionsThatUsesDimenUnits = [displayHeight, displayWidth, displayMousePos, displayRuler]
 
 const mousePosElem = document.getElementById("mousePos")
+let lastWidthRenderedRulerFor = undefined
 
 export function showInitialData(){
     displayCookiesAreDisabled()
@@ -39,8 +40,11 @@ export function displayMousePos(event){
 export function displayWidth(){
     document.getElementById("pageWidth").innerText = DimenUnitHandler.pxToCurrentUnit(getWidth())
 }
-export function displayRuler(){
-    //TODO clear previous elements
+export function displayRuler(event){
+    const resizedPastThreshold = (lastWidthRenderedRulerFor > Ruler.pageWidthSmallRulerThreshold) == (getWidth() > Ruler.pageWidthSmallRulerThreshold)
+    if(resizedPastThreshold && event !== undefined) return 
+    lastWidthRenderedRulerFor = getWidth()
+
     Ruler.clear()
     Ruler.render()
 }

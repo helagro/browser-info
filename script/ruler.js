@@ -1,6 +1,7 @@
 import {DimenUnitHandler} from "./units.js"
 
 export class Ruler{
+    static pageWidthSmallRulerThreshold = 670
     static element = document.getElementById("ruler")
 
     static MEASURMENT_NUMBERS_INCS = {
@@ -8,23 +9,13 @@ export class Ruler{
         px: 50,
         mm: 10
     }
-    static MEASURMENT_NUMBERS_AMTS = {
-        rem: getWidth() > 570 ? 31: 16,
-        px: getWidth() > 570 ? 11: 6,
-        mm: getWidth() > 600 ? 16: 6 
-    }
-    static GRID_TEMPLATE_COLUMNS_STRS = {
-        rem: `${`${Ruler.MEASURMENT_NUMBERS_INCS.rem}rem `.repeat(Ruler.MEASURMENT_NUMBERS_AMTS.rem -1)} 0`,
-        px: `${`${Ruler.MEASURMENT_NUMBERS_INCS.px}px `.repeat(Ruler.MEASURMENT_NUMBERS_AMTS.px -1)} 0`,
-        mm: `${`${Ruler.MEASURMENT_NUMBERS_INCS.mm}mm `.repeat(Ruler.MEASURMENT_NUMBERS_AMTS.mm -1)} 0`
-    }
 
     static clear(){
         Ruler.element.replaceChildren()
     }
 
     static render(){
-        const MEASURMENT_NUMBERS_AMT = Ruler.MEASURMENT_NUMBERS_AMTS[DimenUnitHandler.currentUnit]
+        const MEASURMENT_NUMBERS_AMT = Ruler.getAmountOfNumbers()
         const MEASURMENT_NUMBERS_INC = Ruler.MEASURMENT_NUMBERS_INCS[DimenUnitHandler.currentUnit]
 
         for(let measurmentNumI = 0; measurmentNumI < MEASURMENT_NUMBERS_AMT; measurmentNumI++){
@@ -39,6 +30,21 @@ export class Ruler{
             Ruler.element.appendChild(div)
         }
         
-        Ruler.element.style.gridTemplateColumns = Ruler.GRID_TEMPLATE_COLUMNS_STRS[DimenUnitHandler.currentUnit]
+        Ruler.element.style.gridTemplateColumns = Ruler.getGridTemplateColumns()
+    }
+
+    static getAmountOfNumbers(){
+        switch (DimenUnitHandler.currentUnit){
+            case "rem": return getWidth() > Ruler.pageWidthSmallRulerThreshold ? 31: 16
+            case "px": return getWidth() > Ruler.pageWidthSmallRulerThreshold ? 11: 6
+            case "mm": return getWidth() > Ruler.pageWidthSmallRulerThreshold ? 16: 6 
+        }
+    }
+    static getGridTemplateColumns(){
+        switch (DimenUnitHandler.currentUnit){
+            case "rem": return `${`${Ruler.MEASURMENT_NUMBERS_INCS.rem}rem `.repeat(Ruler.getAmountOfNumbers() -1)} 0`
+            case "px": return `${`${Ruler.MEASURMENT_NUMBERS_INCS.px}px `.repeat(Ruler.getAmountOfNumbers() -1)} 0`
+            case "mm": return `${`${Ruler.MEASURMENT_NUMBERS_INCS.mm}mm `.repeat(Ruler.getAmountOfNumbers() -1)} 0`
+        }
     }
 }
