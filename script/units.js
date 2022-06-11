@@ -32,14 +32,7 @@ export class DimenUnitHandler{
     }
 
     static pxToCurrentUnit(px){
-        if (DimenUnitHandler.currentUnit == "rem"){
-			return (px/getFontSize()).toFixed(2)
-		} else if(DimenUnitHandler.currentUnit == "px"){
-			return px
-		} else if (DimenUnitHandler.currentUnit == "mm"){
-            return DimenUnitHandler.pxToMm(px)
-        }
-		throw new Error("Invalid Unit")
+        return DimenUnitHandler.unitToUnit("px", DimenUnitHandler.currentUnit, px).toFixed(2)
     }
 
     static unitToUnit(unitFrom, unitTo, number){
@@ -47,11 +40,6 @@ export class DimenUnitHandler{
         const toUnitFactor = DimenUnitHandler.#pxToUnitConversionTable[unitTo]
 
         return toPxFactor*toUnitFactor*number
-    }
-    static pxToMm(px){
-        const heightStr = document.defaultView.getComputedStyle(DimenUnitHandler.#mmMeasurementDiv).height
-        const heightInPx = heightStr.substring(0, heightStr.length-2)
-        return (px/(heightInPx/100)).toFixed(2);
     }
 }
 

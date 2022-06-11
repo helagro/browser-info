@@ -21,7 +21,7 @@
                 <p>px</p>
             </div>
             <div class="factsGroup">
-                <p class="factsGroupHeader">FEATURES</p>
+                <p class="groupHeader">FEATURES</p>
                 <div class="factContainer">
                     <p class="factLabel">Javascript</p>
                     <p class="factData" id="jsEnabled">is not</p>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="factsGroup">
-                <p class="factsGroupHeader">PAGE SIZE</p>
+                <p class="groupHeader">PAGE SIZE</p>
                 <div class="factContainer">
                     <p class="factLabel">Page width: </p>
                     <p class="factData" id="pageWidth">?</p>
@@ -72,18 +72,24 @@
             </div>
         </div>
         <div class="calculators">
-            <input type="number" oninput="calculateUnitConversion()" id="unitCalculatorNumInput">
-            <select onchange="calculateUnitConversion()" id="unitCalculatorUnitFrom">
-                <option value="px">px</option>
-                <option value="rem">rem</option>
-                <option value="mm">mm</option>
-            </select>
-            <input type="text" disabled class="unitCalculatorRes" id="unitCalculatorRes"></input>
-            <select onchange="calculateUnitConversion()" id="unitCalculatorUnitTo">
-                <option value="px">px</option>
-                <option value="rem">rem</option>
-                <option value="mm">mm</option>
-            </select>
+            <div class="unitCalculatorContainer">
+                <p class="groupHeader">UNIT CALCULATOR</p>
+                <div class="unitCalculator">
+                    <input type="number" oninput="calculateUnitConversion()" id="unitCalculatorNumInput">
+                    <select onchange="calculateUnitConversion()" id="unitCalculatorUnitFrom">
+                        <option value="px">px</option>
+                        <option value="rem">rem</option>
+                        <option value="mm">mm</option>
+                    </select>
+                    <span class="unitCalculatorTo">To</span>
+                    <input type="text" disabled class="unitCalculatorRes" id="unitCalculatorRes"></input>
+                    <select onchange="calculateUnitConversion()" id="unitCalculatorUnitTo">
+                        <option value="px">px</option>
+                        <option value="rem">rem</option>
+                        <option value="mm">mm</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -1,1 +1,9 @@
-/*# sourceMappingURL=calculators.css.map */
+.unitCalculator {
+  display: grid;
+  grid-template-columns: 8em -webkit-min-content;
+  grid-template-columns: 8em min-content;
+  row-gap: 0.3em;
+}
+.unitCalculator .unitCalculatorTo {
+  grid-column: 1/span 2;
+}/*# sourceMappingURL=calculators.css.map */
