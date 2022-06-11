@@ -4,6 +4,17 @@ export class DimenUnitHandler{
     static avalibleUnits = ["px", "rem", "mm"]
     static currentUnit = "px"
     static #mmMeasurementDiv = document.getElementById("mmMeasurement")
+    static #pxToUnitConversionTable = {
+        px: 1,
+        rem: 1/getFontSize(),
+        mm: DimenUnitHandler.#getPxToMmConversionFactor()
+    }
+
+    static #getPxToMmConversionFactor(){
+        const heightStr = document.defaultView.getComputedStyle(DimenUnitHandler.#mmMeasurementDiv).height
+        const heightInPx = heightStr.substring(0, heightStr.length-2)
+        return 1/(heightInPx/100)
+    }
 
     static changeUnit(newUnit){
         DimenUnitHandler.currentUnit = newUnit
@@ -29,6 +40,13 @@ export class DimenUnitHandler{
             return DimenUnitHandler.pxToMm(px)
         }
 		throw new Error("Invalid Unit")
+    }
+
+    static unitToUnit(unitFrom, unitTo, number){
+        const toPxFactor = 1/DimenUnitHandler.#pxToUnitConversionTable[unitFrom]
+        const toUnitFactor = DimenUnitHandler.#pxToUnitConversionTable[unitTo]
+
+        return toPxFactor*toUnitFactor*number
     }
     static pxToMm(px){
         const heightStr = document.defaultView.getComputedStyle(DimenUnitHandler.#mmMeasurementDiv).height

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Info</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/calculators.css">
     <link rel="stylesheet" href="style/graphicalTools.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +71,20 @@
                 </div>
             </div>
         </div>
+        <div class="calculators">
+            <input type="number" oninput="calculateUnitConversion()" id="unitCalculatorNumInput">
+            <select onchange="calculateUnitConversion()" id="unitCalculatorUnitFrom">
+                <option value="px">px</option>
+                <option value="rem">rem</option>
+                <option value="mm">mm</option>
+            </select>
+            <input type="text" disabled class="unitCalculatorRes" id="unitCalculatorRes"></input>
+            <select onchange="calculateUnitConversion()" id="unitCalculatorUnitTo">
+                <option value="px">px</option>
+                <option value="rem">rem</option>
+                <option value="mm">mm</option>
+            </select>
+        </div>
     </main>
 
     <div class="computing">
@@ -79,6 +94,7 @@
     <script src="script/units.js" type="module"></script>
     <script src="script/displayData.js" type="module"></script>
     <script src="script/calc.js"></script>
+    <script src="script/calculators.js" type="module"></script>
     <script src="script/script.js" type="module"></script>
     <script src="script/listeners.js" type="module"></script>
 </body>
