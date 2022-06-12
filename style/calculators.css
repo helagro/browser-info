@@ -7,4 +7,6 @@
 .unitCalculator .unitCalculatorTo {
   grid-column: 1/span 2;
   text-align: center;
+  font-weight: 900;
+  font-size: 1.2em;
 }/*# sourceMappingURL=calculators.css.map */
